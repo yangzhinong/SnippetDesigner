@@ -371,32 +371,16 @@ namespace Microsoft.SnippetDesigner
         private void CreateSaveAsDialog()
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            string currLang = String.Empty;
-            if (toolStripLanguageBox.SelectedIndex > -1)
-            {
-                currLang = toolStripLanguageBox.SelectedItem.ToString();
-            }
-
-            currLang = currLang.Trim();
             string initialFileName = string.Empty;
-            if (snippetDirectories.ContainsKey(currLang))
-            {
-                initialFileName = snippetDirectories[currLang];
-            }
-            else
-            {
-                initialFileName = snippetDirectories[String.Empty];
-            }
 
             if (isFileNew)
             {
-                initialFileName = Path.Combine(initialFileName, SnippetTitle) + StringConstants.SnippetExtension;
+                initialFileName = Path.Combine(SnippetDesignerPackage.YznSnippetsPath,  DateTime.Now.ToString("yyyyMMddHHmmss") + StringConstants.SnippetExtension);
             }
             else
             {
-                initialFileName += Path.Combine(initialFileName, Path.GetFileName(fileName));
+                initialFileName = Path.Combine(SnippetDesignerPackage.YznSnippetsPath, Path.GetFileName(fileName));
             }
-
 
             int can;
             string fileaNameNew;
@@ -404,6 +388,13 @@ namespace Microsoft.SnippetDesigner
             int hr = uiShell.SaveDocDataToFile(VSSAVEFLAGS.VSSAVE_SaveAs, this, initialFileName, out fileaNameNew, out can);
         }
 
+
+        protected override void TblSaveAs() => CreateSaveAsDialog();
+
+        protected override void TblSave()
+        {
+            Save();
+        }
         /// <summary>
         /// Save the snippet by passing the correct parameters into the generalsave function
         /// </summary>

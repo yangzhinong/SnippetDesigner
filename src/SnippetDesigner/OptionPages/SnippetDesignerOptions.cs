@@ -97,6 +97,13 @@ namespace Microsoft.SnippetDesigner.OptionPages
             set { indexedSnippetDirectories = value; }
         }
 
+
+        [Category("Search")]
+        [Description("Yzn自定的Snippet根目录")]
+        public string YznSnippetRootPath { get; set; }
+
+
+
         [Category("Editor")]
         [DisplayName("Default Language")]
         [Description("The default language the Snippet Editor starts in.")]

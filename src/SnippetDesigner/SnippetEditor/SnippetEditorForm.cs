@@ -948,9 +948,51 @@ namespace Microsoft.SnippetDesigner
             }
         }
 
+       
+
         private bool IsValidReplaceableText(string text)
         {
             return validPotentialReplacementRegex.IsMatch(text);
+        }
+
+        public bool CreateClassNameReplacement()
+        {
+            string textToChange = "classname";
+            if (reservedReplacements.Contains(textToChange.Trim()))
+                return false;
+
+            //check if replacement exists already
+            bool existsAlready = false;
+            foreach (DataGridViewRow row in replacementGridView.Rows)
+            {
+                if ((string)row.Cells[StringConstants.ColumnID].EditedFormattedValue == textToChange ||
+                    textToChange.Trim() == String.Empty)
+                {
+                    //this replacement already exists or is nothing don't add it to the replacement list
+                    existsAlready = true;
+                }
+            }
+
+            //build new replacement text
+            string newText = TurnTextIntoReplacementSymbol(textToChange);
+            if (!existsAlready)
+            {
+                object[] newRow = { textToChange, "Class name", "ClassNamePlaceholder", Resources.ReplacementLiteralName, String.Empty, "ClassName()", false };
+                try
+                {
+                    int rowIndex = replacementGridView.Rows.Add(newRow);
+                    SetOrDisableTypeField(false, rowIndex);
+                }
+                catch (InvalidOperationException ex)
+                {
+                    logger.Log("Possible error when reloading snippet", "SnippetEditorForm", ex);
+                }
+            }
+
+            //replace all occurances of the textToFind with $textToFind$
+            int numFoundAndReplaced = ReplaceAll(textToChange, newText, true);
+
+            return numFoundAndReplaced > 0;
         }
 
         private bool CreateReplacement(string textToChange)
@@ -1204,6 +1246,29 @@ namespace Microsoft.SnippetDesigner
             }
 
             RefreshPropertiesWindow();
+        }
+
+        private void tbtnSaveAs_Click(object sender, EventArgs e)
+        {
+            TblSaveAs();
+        }
+
+        protected virtual void TblSaveAs() { }
+
+        protected virtual void TblSave() { }
+        private void tblSave_Click(object sender, EventArgs e)
+        {
+            TblSave();
+        }
+
+        private void tblHelp_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://docs.microsoft.com/en-us/visualstudio/ide/code-snippet-functions?view=vs-2022");
+        }
+
+        private void tbtnClassReplace_Click(object sender, EventArgs e)
+        {
+            CreateClassNameReplacement();
         }
     }
 }

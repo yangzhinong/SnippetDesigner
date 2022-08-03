@@ -126,23 +126,23 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="snippetsLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 25</value>
+    <value>55, 23</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="toolStripSnippetTitles.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="toolStripSnippetTitles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
+    <value>121, 26</value>
   </data>
   <data name="languageLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 20</value>
+    <value>72, 23</value>
   </data>
   <data name="toolStripLanguageBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
+    <value>121, 26</value>
   </data>
   <data name="shortcutLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 20</value>
+    <value>59, 23</value>
   </data>
   <data name="shortcutLabel.Text" xml:space="preserve">
     <value>Shortcut:</value>
@@ -154,7 +154,67 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="shortcutTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
+    <value>100, 26</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 26</value>
+  </data>
+  <data name="tbtnClassReplace.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tbtnClassReplace.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tbtnClassReplace.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 23</value>
+  </data>
+  <data name="tbtnClassReplace.Text" xml:space="preserve">
+    <value>ClassNameReplace</value>
+  </data>
+  <data name="tbtnSaveAs.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tbtnSaveAs.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="tbtnSaveAs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 23</value>
+  </data>
+  <data name="tbtnSaveAs.Text" xml:space="preserve">
+    <value>另存为...</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 26</value>
+  </data>
+  <data name="tblHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 23</value>
+  </data>
+  <data name="tblHelp.Text" xml:space="preserve">
+    <value>帮助</value>
   </data>
   <data name="topCommandBar.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -163,7 +223,7 @@
     <value>1, 2, 2, 0</value>
   </data>
   <data name="topCommandBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>845, 30</value>
+    <value>845, 28</value>
   </data>
   <data name="topCommandBar.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -187,7 +247,7 @@
     <value>Fill</value>
   </data>
   <data name="codeReplacementsSplitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 30</value>
+    <value>0, 28</value>
   </data>
   <data name="codeReplacementsSplitter.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
@@ -202,10 +262,10 @@
     <value>0, 0</value>
   </data>
   <data name="snippetCodeWindow.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>250, 100</value>
+    <value>250, 92</value>
   </data>
   <data name="snippetCodeWindow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>845, 511</value>
+    <value>845, 469</value>
   </data>
   <data name="snippetCodeWindow.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -214,7 +274,7 @@
     <value>snippetCodeWindow</value>
   </data>
   <data name="&gt;&gt;snippetCodeWindow.Type" xml:space="preserve">
-    <value>Microsoft.SnippetDesigner.CodeWindow, SnippetDesigner, Version=1.8.7422.18551, Culture=neutral, PublicKeyToken=8cfc085d5269c705</value>
+    <value>Microsoft.SnippetDesigner.CodeWindow, SnippetDesigner, Version=0.0.0.0, Culture=neutral, PublicKeyToken=8cfc085d5269c705</value>
   </data>
   <data name="&gt;&gt;snippetCodeWindow.Parent" xml:space="preserve">
     <value>codeReplacementsSplitter.Panel1</value>
@@ -261,8 +321,14 @@
   <metadata name="replacementGridMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>130, 5</value>
   </metadata>
+  <data name="removeReplacementToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 22</value>
+  </data>
+  <data name="removeReplacementToolStripMenuItem.Text" xml:space="preserve">
+    <value>Remove Replacement</value>
+  </data>
   <data name="replacementGridMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 26</value>
+    <value>203, 26</value>
   </data>
   <data name="&gt;&gt;replacementGridMenu.Name" xml:space="preserve">
     <value>replacementGridMenu</value>
@@ -274,10 +340,10 @@
     <value>Fill</value>
   </data>
   <data name="replacementGridView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
+    <value>3, 15</value>
   </data>
   <data name="replacementGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>839, 249</value>
+    <value>839, 231</value>
   </data>
   <data name="replacementGridView.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -307,7 +373,7 @@
     <value>3, 0</value>
   </data>
   <data name="replacementLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
+    <value>77, 12</value>
   </data>
   <data name="replacementLabel.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -337,7 +403,7 @@
     <value>2</value>
   </data>
   <data name="replacementTable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>845, 268</value>
+    <value>845, 249</value>
   </data>
   <data name="replacementTable.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -370,10 +436,10 @@
     <value>1</value>
   </data>
   <data name="codeReplacementsSplitter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>845, 783</value>
+    <value>845, 722</value>
   </data>
   <data name="codeReplacementsSplitter.SplitterDistance" type="System.Int32, mscorlib">
-    <value>511</value>
+    <value>469</value>
   </data>
   <data name="codeReplacementsSplitter.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -390,12 +456,6 @@
   <data name="&gt;&gt;codeReplacementsSplitter.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="removeReplacementToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 22</value>
-  </data>
-  <data name="removeReplacementToolStripMenuItem.Text" xml:space="preserve">
-    <value>Remove Replacement</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -403,7 +463,7 @@
     <value>339</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>6, 12</value>
   </data>
   <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -412,7 +472,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>845, 813</value>
+    <value>845, 750</value>
   </data>
   <data name="&gt;&gt;snippetsLabel.Name" xml:space="preserve">
     <value>snippetsLabel</value>
@@ -449,6 +509,30 @@
   </data>
   <data name="&gt;&gt;shortcutTextBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbtnSaveAs.Name" xml:space="preserve">
+    <value>tbtnSaveAs</value>
+  </data>
+  <data name="&gt;&gt;tbtnSaveAs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tblHelp.Name" xml:space="preserve">
+    <value>tblHelp</value>
+  </data>
+  <data name="&gt;&gt;tblHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ID.Name" xml:space="preserve">
     <value>ID</value>
@@ -497,6 +581,12 @@
   </data>
   <data name="&gt;&gt;removeReplacementToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbtnClassReplace.Name" xml:space="preserve">
+    <value>tbtnClassReplace</value>
+  </data>
+  <data name="&gt;&gt;tbtnClassReplace.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SnippetEditorForm</value>

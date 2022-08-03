@@ -96,6 +96,12 @@ namespace Microsoft.SnippetDesigner
                             hr = VSConstants.S_OK;
                             break;
                         }
+                    case PkgCmdIDList.cmdidSnippetInsertClassName:
+                        {
+                            snippetEditor.CreateClassNameReplacement();
+                            hr = VSConstants.S_OK;
+                            break;
+                        }
                     default:
                         {
                             //this is a command we arent intercepting so forward it

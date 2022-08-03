@@ -23,6 +23,8 @@ namespace Microsoft.SnippetDesigner
         public const uint cmdidSnippetRemoveReplacement = 0x106;
         public const uint cmdidSnippetInsertEnd = 0x107;
         public const uint cmdidSnippetInsertSelected = 0x108;
+        public const uint cmdidSnippetInsertClassName = 0x109;
+
         public const uint cmdidSnippetReplacementMarker = 0x1100;
     };
 }

@@ -418,22 +418,35 @@ namespace Microsoft.SnippetDesigner
             }
         }
 
+        /// <summary>
+        /// 我的Snippets目录
+        /// </summary>
+        public static  string YznSnippetsPath = @"f:\Snippets";
 
         private string GetNextAvailableNewSnippetTitle()
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            int i = 1;
-            string newTitle = null;
+            //            int i = 1;
+            //            string newTitle = null;
 
-            newTitle = string.Format(StringConstants.NewSnippetTitleFormat, i++);
-#pragma warning disable VSTHRD010 // Invoke single-threaded types on Main thread
-            while (Dte.Windows.Cast<Window>().Any(window => window.Caption.Equals(newTitle)))
-#pragma warning restore VSTHRD010 // Invoke single-threaded types on Main thread
-            {
-                newTitle = string.Format(StringConstants.NewSnippetTitleFormat, i++);
-            }
+            //            newTitle = string.Format(StringConstants.NewSnippetTitleFormat, i++);
+            //#pragma warning disable VSTHRD010 // Invoke single-threaded types on Main thread
+            //            while (Dte.Windows.Cast<Window>().Any(window => window.Caption.Equals(newTitle)))
+            //#pragma warning restore VSTHRD010 // Invoke single-threaded types on Main thread
+            //            {
+            //                newTitle = string.Format(StringConstants.NewSnippetTitleFormat, i++);
+            //            }
 
-            return newTitle;
+            //            var xml=@""
+
+            var fileName = $@"{YznSnippetsPath}\tmp\{Guid.NewGuid().ToString("n")}.Snippet";
+            System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(fileName));
+            var template = System.IO.File.ReadAllText($@"{YznSnippetsPath}\VsSetting\SnippetTemplate\C#.txt")
+                                         .Replace("$$", ExportSnippetData.Code);
+             System.IO.File.WriteAllText(fileName, template);
+            return fileName;
+
+
         }
 
 
@@ -443,20 +456,35 @@ namespace Microsoft.SnippetDesigner
             return GetService(typeof(SUIHostCommandDispatcher)) as IOleCommandTarget;
         }
 
+        
+
         private bool LaunchNewFile(string fileName)
         {
-            ThreadHelper.ThrowIfNotOnUIThread();
-            IntPtr inArgPtr = Marshal.AllocCoTaskMem(512);
-            Marshal.GetNativeVariantForObject(fileName, inArgPtr);
 
-            Guid cmdGroup = VSConstants.GUID_VSStandardCommandSet97;
-            IOleCommandTarget commandTarget = GetShellCommandDispatcher();
-            int hr = commandTarget.Exec(ref cmdGroup,
-                                        (uint)VSConstants.VSStd97CmdID.FileNew,
-                                        (uint)OLECMDEXECOPT.OLECMDEXECOPT_DODEFAULT,
-                                        inArgPtr,
-                                        IntPtr.Zero);
-            return ErrorHandler.Succeeded(hr);
+            ThreadHelper.ThrowIfNotOnUIThread();
+            var dte = Dte;
+            try
+            {
+                  dte.Documents.Open(fileName);
+            } catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+
+            return true;
+            //ThreadHelper.ThrowIfNotOnUIThread();
+            //IntPtr inArgPtr = Marshal.AllocCoTaskMem(512);
+            //Marshal.GetNativeVariantForObject(fileName, inArgPtr);
+
+            //Guid cmdGroup = VSConstants.GUID_VSStandardCommandSet97;
+            //IOleCommandTarget commandTarget = GetShellCommandDispatcher();
+            //int hr = commandTarget.Exec(ref cmdGroup,
+            //                            (uint)VSConstants.VSStd97CmdID.FileNew,
+            //                            (uint)OLECMDEXECOPT.OLECMDEXECOPT_DODEFAULT,
+            //                            inArgPtr,
+            //                            IntPtr.Zero);
+            //return ErrorHandler.Succeeded(hr);
         }
 
         /// <summary>
@@ -486,6 +514,17 @@ namespace Microsoft.SnippetDesigner
 
                 Logger = new Logger(this);
                 Settings = GetDialogPage(typeof(SnippetDesignerOptions)) as SnippetDesignerOptions;
+
+                if (string.IsNullOrEmpty(Settings.YznSnippetRootPath))
+                {
+                    Settings.YznSnippetRootPath = @"F:\Snippets";
+                }
+                try
+                {
+                    System.IO.Directory.CreateDirectory(Settings.YznSnippetRootPath);
+                } catch { }
+                
+                YznSnippetsPath = Settings.YznSnippetRootPath;
 
                 //Create Editor Factory
                 editorFactory = new EditorFactory(this);

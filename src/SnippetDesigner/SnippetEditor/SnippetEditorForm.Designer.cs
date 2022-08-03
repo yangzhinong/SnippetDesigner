@@ -37,7 +37,12 @@ namespace Microsoft.SnippetDesigner
             this.toolStripLanguageBox = new System.Windows.Forms.ToolStripComboBox();
             this.shortcutLabel = new System.Windows.Forms.ToolStripLabel();
             this.shortcutTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbtnSaveAs = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tblHelp = new System.Windows.Forms.ToolStripLabel();
             this.codeReplacementsSplitter = new System.Windows.Forms.SplitContainer();
+            this.snippetCodeWindow = new Microsoft.SnippetDesigner.CodeWindow();
             this.replacementTable = new System.Windows.Forms.TableLayoutPanel();
             this.replacementGridView = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +55,7 @@ namespace Microsoft.SnippetDesigner
             this.replacementGridMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.removeReplacementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.replacementLabel = new System.Windows.Forms.Label();
-            this.snippetCodeWindow = new Microsoft.SnippetDesigner.CodeWindow();
+            this.tbtnClassReplace = new System.Windows.Forms.ToolStripButton();
             this.topCommandBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.codeReplacementsSplitter)).BeginInit();
             this.codeReplacementsSplitter.Panel1.SuspendLayout();
@@ -73,7 +78,12 @@ namespace Microsoft.SnippetDesigner
             this.languageLabel,
             this.toolStripLanguageBox,
             this.shortcutLabel,
-            this.shortcutTextBox});
+            this.shortcutTextBox,
+            this.toolStripSeparator2,
+            this.tbtnClassReplace,
+            this.tbtnSaveAs,
+            this.toolStripSeparator1,
+            this.tblHelp});
             this.topCommandBar.Name = "topCommandBar";
             this.topCommandBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.topCommandBar.Paint += new System.Windows.Forms.PaintEventHandler(this.mainObjectsRepaiont_Paint);
@@ -115,6 +125,30 @@ namespace Microsoft.SnippetDesigner
             this.shortcutTextBox.Name = "shortcutTextBox";
             this.shortcutTextBox.TextChanged += new System.EventHandler(this.shortcutTextBox_TextChanged);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            // 
+            // tbtnSaveAs
+            // 
+            this.tbtnSaveAs.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tbtnSaveAs, "tbtnSaveAs");
+            this.tbtnSaveAs.Name = "tbtnSaveAs";
+            this.tbtnSaveAs.Click += new System.EventHandler(this.tbtnSaveAs_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
+            // tblHelp
+            // 
+            this.tblHelp.IsLink = true;
+            this.tblHelp.Name = "tblHelp";
+            resources.ApplyResources(this.tblHelp, "tblHelp");
+            this.tblHelp.Click += new System.EventHandler(this.tblHelp_Click);
+            // 
             // codeReplacementsSplitter
             // 
             resources.ApplyResources(this.codeReplacementsSplitter, "codeReplacementsSplitter");
@@ -127,6 +161,13 @@ namespace Microsoft.SnippetDesigner
             // codeReplacementsSplitter.Panel2
             // 
             this.codeReplacementsSplitter.Panel2.Controls.Add(this.replacementTable);
+            // 
+            // snippetCodeWindow
+            // 
+            resources.ApplyResources(this.snippetCodeWindow, "snippetCodeWindow");
+            this.snippetCodeWindow.CodeText = "";
+            this.snippetCodeWindow.Name = "snippetCodeWindow";
+            this.snippetCodeWindow.Paint += new System.Windows.Forms.PaintEventHandler(this.mainObjectsRepaiont_Paint);
             // 
             // replacementTable
             // 
@@ -228,12 +269,12 @@ namespace Microsoft.SnippetDesigner
             resources.ApplyResources(this.replacementLabel, "replacementLabel");
             this.replacementLabel.Name = "replacementLabel";
             // 
-            // snippetCodeWindow
+            // tbtnClassReplace
             // 
-            resources.ApplyResources(this.snippetCodeWindow, "snippetCodeWindow");
-            this.snippetCodeWindow.CodeText = "";
-            this.snippetCodeWindow.Name = "snippetCodeWindow";
-            this.snippetCodeWindow.Paint += new System.Windows.Forms.PaintEventHandler(this.mainObjectsRepaiont_Paint);
+            this.tbtnClassReplace.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.tbtnClassReplace, "tbtnClassReplace");
+            this.tbtnClassReplace.Name = "tbtnClassReplace";
+            this.tbtnClassReplace.Click += new System.EventHandler(this.tbtnClassReplace_Click);
             // 
             // SnippetEditorForm
             // 
@@ -282,6 +323,10 @@ namespace Microsoft.SnippetDesigner
         internal System.Windows.Forms.DataGridViewCheckBoxColumn Editable;
         internal System.Windows.Forms.ToolStripLabel shortcutLabel;
         internal System.Windows.Forms.ToolStripTextBox shortcutTextBox;
-
+        private System.Windows.Forms.ToolStripButton tbtnSaveAs;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel tblHelp;
+        private System.Windows.Forms.ToolStripButton tbtnClassReplace;
     }
 }

@@ -252,14 +252,17 @@ namespace Microsoft.SnippetDesigner
         /// </summary>
         private void GetUserSnippetDirectories()
         {
-            string vsDocDir = RegistryLocations.GetVisualStudioUserDataPath(SnippetDesignerPackage.Instance.VSVersion);
+            //string vsDocDir = RegistryLocations.GetVisualStudioUserDataPath(SnippetDesignerPackage.Instance.VSVersion);
 
-            if (string.IsNullOrEmpty(vsDocDir) && !string.IsNullOrEmpty(SnippetDesignerPackage.Instance.VisualStudioName))
-            {
-                var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                vsDocDir = Path.Combine(documentsPath, SnippetDesignerPackage.Instance.VisualStudioName);
-            }
-            string snippetDir = Path.Combine(vsDocDir, StringConstants.SnippetDirectoryName);
+            //if (string.IsNullOrEmpty(vsDocDir) && !string.IsNullOrEmpty(SnippetDesignerPackage.Instance.VisualStudioName))
+            //{
+            //    var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            //    vsDocDir = Path.Combine(documentsPath, SnippetDesignerPackage.Instance.VisualStudioName);
+            //}
+            string snippetDir = SnippetDesignerPackage.YznSnippetsPath ;
+
+
+
             userSnippetDirectories[Resources.DisplayNameCSharp] = Path.Combine(snippetDir, Path.Combine(StringConstants.SnippetDirNameCSharp, StringConstants.MySnippetsDir));
             userSnippetDirectories[Resources.DisplayNameVisualBasic] = Path.Combine(snippetDir, Path.Combine(StringConstants.SnippetDirNameVisualBasic, StringConstants.MySnippetsDir));
             userSnippetDirectories[Resources.DisplayNameXML] = Path.Combine(snippetDir, Path.Combine(StringConstants.SnippetDirNameXML, StringConstants.MyXmlSnippetsDir));
