@@ -14,7 +14,8 @@ namespace Microsoft.SnippetDesigner
         SQLServerDataTools,
         HTML,
         XAML,
-        TypeScript
+        TypeScript,
+        CSS
     }
 
     /// <summary>
@@ -51,24 +52,34 @@ namespace Microsoft.SnippetDesigner
             {
                 case Language.CPP:
                     return Resources.DisplayNameCPP;
+
                 case Language.CSharp:
                     return Resources.DisplayNameCSharp;
+
                 case Language.VisualBasic:
                     return Resources.DisplayNameVisualBasic;
+
                 case Language.XML:
                     return Resources.DisplayNameXML;
+
                 case Language.JavaScript:
                     return Resources.DisplayNameJavaScript;
+
                 case Language.SQL:
                     return Resources.DisplayNameSQL;
+
                 case Language.SQLServerDataTools:
                     return Resources.DisplayNameSQLServerDataTools;
+
                 case Language.HTML:
                     return Resources.DisplayNameHTML;
+
                 case Language.XAML:
                     return Resources.DisplayNameXAML;
+
                 case Language.TypeScript:
                     return Resources.DisplayNameTypeScript;
+
                 default:
                     return String.Empty;
             }
@@ -85,24 +96,37 @@ namespace Microsoft.SnippetDesigner
             {
                 case Language.CPP:
                     return StringConstants.SchemaNameCPP;
+
                 case Language.CSharp:
                     return StringConstants.SchemaNameCSharp;
+
                 case Language.VisualBasic:
                     return StringConstants.SchemaNameVisualBasic;
+
                 case Language.XML:
                     return StringConstants.SchemaNameXML;
+
                 case Language.JavaScript:
                     return StringConstants.SchemaNameJavaScriptVS11;
+
                 case Language.SQL:
                     return StringConstants.SchemaNameSQL;
+
                 case Language.SQLServerDataTools:
                     return StringConstants.SchemaNameSQLServerDataTools;
+
                 case Language.HTML:
                     return StringConstants.SchemaNameHTML;
+
                 case Language.XAML:
                     return StringConstants.SchemaNameXAML;
+
                 case Language.TypeScript:
                     return StringConstants.SchemaNameTypeScript;
+
+                case Language.CSS:
+                    return StringConstants.SchemaNameCSS;
+
                 default:
                     return String.Empty;
             }
@@ -121,7 +145,6 @@ namespace Microsoft.SnippetDesigner
             snippetSchemaLanguageToDisplay[StringConstants.SchemaNameCSharp] = Resources.DisplayNameCSharp;
             snippetSchemaLanguageToDisplay[StringConstants.SchemaNameCSharp2] = Resources.DisplayNameCSharp;
 
-
             snippetSchemaLanguageToDisplay[StringConstants.SchemaNameXAML] = Resources.DisplayNameXAML;
 
             snippetSchemaLanguageToDisplay[StringConstants.SchemaNameXML] = Resources.DisplayNameXML;
@@ -131,13 +154,11 @@ namespace Microsoft.SnippetDesigner
             snippetSchemaLanguageToDisplay[StringConstants.SchemaNameSQLServerDataTools] = Resources.DisplayNameSQLServerDataTools;
             snippetSchemaLanguageToDisplay[StringConstants.SchemaNameHTML] = Resources.DisplayNameHTML;
 
+            snippetSchemaLanguageToDisplay[StringConstants.SchemaNameCSS] = "css";
 
             snippetSchemaLanguageToDisplay[StringConstants.SchemaNameTypeScript] = Resources.DisplayNameTypeScript;
 
-
             snippetSchemaLanguageToDisplay[String.Empty] = String.Empty;
-
-
 
             //hash from display names to schema names
 
@@ -146,7 +167,6 @@ namespace Microsoft.SnippetDesigner
             displayLanguageToXML[Resources.DisplayNameVisualBasic] = StringConstants.SchemaNameVisualBasic;
             displayLanguageToXML[Resources.DisplayNameCSharp] = StringConstants.SchemaNameCSharp;
 
-
             displayLanguageToXML[Resources.DisplayNameXAML] = StringConstants.SchemaNameXAML;
 
             displayLanguageToXML[Resources.DisplayNameXML] = StringConstants.SchemaNameXML;
@@ -154,10 +174,9 @@ namespace Microsoft.SnippetDesigner
             displayLanguageToXML[Resources.DisplayNameSQL] = StringConstants.SchemaNameSQL;
             displayLanguageToXML[Resources.DisplayNameSQLServerDataTools] = StringConstants.SchemaNameSQLServerDataTools;
             displayLanguageToXML[Resources.DisplayNameHTML] = StringConstants.SchemaNameHTML;
-
+            displayLanguageToXML["css"] = StringConstants.SchemaNameCSS;
 
             displayLanguageToXML[Resources.DisplayNameTypeScript] = StringConstants.SchemaNameTypeScript;
-
 
             displayLanguageToXML[String.Empty] = String.Empty;
         }

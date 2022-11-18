@@ -14,6 +14,7 @@ namespace Microsoft.SnippetDesigner
 
         //yellow marker name for attribute - this is defined also in a resource but needs to also be here to use in attirbue ProvideCustomMarker
         public const string SnippetReplacementMarker = "Snippet Replacement Marker";
+
         public const string ActiveSnippetReplacementMarker = "Active Snippet Replacement Marker";
         public const string MarkerServiceName = "HighlightMarkerService";
 
@@ -37,7 +38,8 @@ namespace Microsoft.SnippetDesigner
         public const string ExportNameHTML = "html";
         public const string ExportNameSQL = "sql";
         public const string ExportNameSQL2 = "SQL Server Tools";
-        
+        public const string ExportNameCSS = "css";
+
         public const string MySnippetsDir = "My Code Snippets";
         public const string MyXmlSnippetsDir = "My Xml Snippets";
         public const string SchemaNameCPP = "cpp";
@@ -52,6 +54,7 @@ namespace Microsoft.SnippetDesigner
         public const string SchemaNameHTML = "html";
         public const string SchemaNameXAML = "xaml";
         public const string SchemaNameTypeScript = "typescript";
+        public const string SchemaNameCSS = "css";
 
         public const string SnippetDirectoryName = "Code Snippets";
         public const string SnippetDirNameCPP = "Visual C++";
@@ -64,6 +67,7 @@ namespace Microsoft.SnippetDesigner
         public const string SnippetDirNameJavaScript = "My JScript Snippets";
         public const string SnippetDirNameJavaScriptVS11 = "JavaScript";
         public const string SnippetDirNameXAML = "My XAML Snippets";
+        public const string SnippetDirNameCSS = "My CSS Snippets";
 
         public const string VisualWebDeveloper = "Visual Web Developer";
         public const string SnippetTypeExpansion = "Expansion";

@@ -29,8 +29,8 @@ namespace Microsoft.SnippetDesigner
     /// The minimum requirement for a class to be considered a valid package for Visual Studio
     /// is to implement the IVsPackage interface and register itself with the shell.
     /// This package uses the helper classes defined inside the Managed Package Framework (MPF)
-    /// to do it: it derives from the Package class that provides the implementation of the 
-    /// IVsPackage interface and uses the registration attributes defined in the framework to 
+    /// to do it: it derives from the Package class that provides the implementation of the
+    /// IVsPackage interface and uses the registration attributes defined in the framework to
     /// register itself and its components with the shell.
     /// </summary>
     // This attribute tells the registration utility (regpkg.exe) that this class needs
@@ -59,23 +59,27 @@ namespace Microsoft.SnippetDesigner
         internal static SnippetDesignerPackage Instance;
         private EditorFactory editorFactory;
         private OleMenuCommand snippetExportCommand;
+
         // Cache the Menu Command Service since we will use it multiple times
         private OleMenuCommandService menuCommandService;
+
         //keep track of the last window which was active
         private Window previousWindow;
+
         private Window currentWindow;
 
         //needed for the custom type descriptor provider
         private string activeSnippetTitle = String.Empty;
+
         private string activeSnippetLanguage = String.Empty;
         private IComponentModel componentModel;
         internal ILogger Logger { get; private set; }
 
         /// <summary>
         /// Default constructor of the package.
-        /// Inside this method you can place any initialization code that does not require 
-        /// any Visual Studio service because at this point the package object is created but 
-        /// not sited yet inside Visual Studio environment. The place to do all the other 
+        /// Inside this method you can place any initialization code that does not require
+        /// any Visual Studio service because at this point the package object is created but
+        /// not sited yet inside Visual Studio environment. The place to do all the other
         /// initialization is the Initialize method.
         /// </summary>
         public SnippetDesignerPackage()
@@ -93,7 +97,6 @@ namespace Microsoft.SnippetDesigner
                 return componentModel;
             }
         }
-
 
         /// <summary>
         /// Gets the settings.
@@ -116,7 +119,7 @@ namespace Microsoft.SnippetDesigner
         }
 
         /// <summary>
-        /// Return the active snippet title so that the type desccriptor can 
+        /// Return the active snippet title so that the type desccriptor can
         /// </summary>
         public string ActiveSnippetLanguage
         {
@@ -146,7 +149,6 @@ namespace Microsoft.SnippetDesigner
             get { return VSVersion.StartsWith("17."); }
         }
 
-
         /// <summary>
         /// Get the name of the instance of VS (like Visual Studio 2022)
         /// NOTE: I would like to find a programatic way of getting this
@@ -155,17 +157,15 @@ namespace Microsoft.SnippetDesigner
         {
             get
             {
-                if(IsVisualStudio2022)
+                if (IsVisualStudio2022)
                 {
                     return "Visual Studio 2022";
                 }
-
 
                 if (IsVisualStudio2019)
                 {
                     return "Visual Studio 2019";
                 }
-
 
                 if (IsVisualStudio2017)
                 {
@@ -205,7 +205,6 @@ namespace Microsoft.SnippetDesigner
 
         public async Task<string> GetVisualStudioResourceStringAsync(uint resourceId)
         {
-
             await JoinableTaskFactory.SwitchToMainThreadAsync();
             var shell = (IVsShell)await GetServiceAsync(typeof(SVsShell));
             string localizedResource = null;
@@ -246,7 +245,6 @@ namespace Microsoft.SnippetDesigner
                     //The Microsoft.Win32.RegistryKey is closed (closed keys cannot be accessed).
                 }
 
-
                 return registeredName;
             }
         }
@@ -257,8 +255,8 @@ namespace Microsoft.SnippetDesigner
         }
 
         /// <summary>
-        /// This function is called when the user clicks the menu item that shows the 
-        /// tool window. See the Initialize method to see how the menu item is associated to 
+        /// This function is called when the user clicks the menu item that shows the
+        /// tool window. See the Initialize method to see how the menu item is associated to
         /// this function using the OleMenuCommandService service and the MenuCommand class.
         /// </summary>
         private void ShowSnippetExplorer(object sender, EventArgs e)
@@ -268,7 +266,6 @@ namespace Microsoft.SnippetDesigner
             // is actually the only one.
             // The last flag is set to true so that if the tool window does not exists it will be created.
 
-
             ToolWindowPane window = FindToolWindow(typeof(SnippetExplorerToolWindow), 0, true);
             if ((null == window) || (null == window.Frame))
             {
@@ -277,7 +274,6 @@ namespace Microsoft.SnippetDesigner
             var windowFrame = (IVsWindowFrame)window.Frame;
             ErrorHandler.ThrowOnFailure(windowFrame.Show());
         }
-
 
         /// <summary>
         /// Get the language of the active window
@@ -297,7 +293,6 @@ namespace Microsoft.SnippetDesigner
                 return lang;
             }
         }
-
 
         /// <summary>
         ///  get the current text document
@@ -348,7 +343,6 @@ namespace Microsoft.SnippetDesigner
             ExportSnippetData = null;
         }
 
-
         /// <summary>
         /// Called by the export command.  This fucntion will determin the exported language
         /// and the exported code and build a ExportToSnippetData object.  It then creates a new snippet
@@ -360,7 +354,7 @@ namespace Microsoft.SnippetDesigner
         {
             ThreadHelper.ThrowIfNotOnUIThread();
             // The selected item is the active window pane
-            // in Visual Studio. 
+            // in Visual Studio.
 
             // Get the code from the Document into TextDocument codeDoc
             TextDocument codeDoc = CurrentTextDocument;
@@ -386,7 +380,6 @@ namespace Microsoft.SnippetDesigner
                 return;
             }
         }
-
 
         /// <summary>
         /// The vs command line argument parser.  When you do File.NewSnippet and then args of
@@ -421,7 +414,7 @@ namespace Microsoft.SnippetDesigner
         /// <summary>
         /// 我的Snippets目录
         /// </summary>
-        public static  string YznSnippetsPath = @"f:\Snippets";
+        public static string YznSnippetsPath = @"e:\Snippets";
 
         private string GetNextAvailableNewSnippetTitle()
         {
@@ -443,12 +436,9 @@ namespace Microsoft.SnippetDesigner
             System.IO.Directory.CreateDirectory(System.IO.Path.GetDirectoryName(fileName));
             var template = System.IO.File.ReadAllText($@"{YznSnippetsPath}\VsSetting\SnippetTemplate\C#.txt")
                                          .Replace("$$", ExportSnippetData.Code);
-             System.IO.File.WriteAllText(fileName, template);
+            System.IO.File.WriteAllText(fileName, template);
             return fileName;
-
-
         }
-
 
         private IOleCommandTarget GetShellCommandDispatcher()
         {
@@ -456,17 +446,15 @@ namespace Microsoft.SnippetDesigner
             return GetService(typeof(SUIHostCommandDispatcher)) as IOleCommandTarget;
         }
 
-        
-
         private bool LaunchNewFile(string fileName)
         {
-
             ThreadHelper.ThrowIfNotOnUIThread();
             var dte = Dte;
             try
             {
-                  dte.Documents.Open(fileName);
-            } catch (Exception e)
+                dte.Documents.Open(fileName);
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e);
                 return false;
@@ -522,8 +510,9 @@ namespace Microsoft.SnippetDesigner
                 try
                 {
                     System.IO.Directory.CreateDirectory(Settings.YznSnippetRootPath);
-                } catch { }
-                
+                }
+                catch { }
+
                 YznSnippetsPath = Settings.YznSnippetRootPath;
 
                 //Create Editor Factory
@@ -536,7 +525,6 @@ namespace Microsoft.SnippetDesigner
                 var snippetExplorerCommandID = new CommandID(GuidList.SnippetDesignerCmdSet,
                                                              (int)PkgCmdIDList.cmdidSnippetExplorer);
                 await DefineCommandHandlerAsync(ShowSnippetExplorer, snippetExplorerCommandID);
-
 
                 //DefineCommandHandler not used for these since extra properties need to be set
                 // Create the command for the context menu export snippet
@@ -551,7 +539,6 @@ namespace Microsoft.SnippetDesigner
                 OleMenuCommand snippetExportCommandLine = await DefineCommandHandlerAsync(ExportToSnippet, exportCmdLineID);
                 snippetExportCommandLine.ParametersDescription = StringConstants.ArgumentStartMarker;
                 //a space means arguments are coming
-
 
                 // Create the command for CreateSnippet
                 var createcmdID = new CommandID(GuidList.SnippetDesignerCmdSet,
@@ -574,7 +561,6 @@ namespace Microsoft.SnippetDesigner
                     }
                     );
 
-
                 //Set up Selection Events so that I can tell when a new window in VS has become active.
                 uint cookieForSelection = 0;
                 var selMonitor = await GetServiceAsync(typeof(SVsShellMonitorSelection)) as IVsMonitorSelection;
@@ -587,9 +573,7 @@ namespace Microsoft.SnippetDesigner
                 Debug.WriteLine(e);
                 throw;
             }
-
         }
-
 
         /// <summary>
         /// Define a command handler.
@@ -622,7 +606,6 @@ namespace Microsoft.SnippetDesigner
             return command;
         }
 
-
         /// <summary>
         /// Called when the UI Context changes.  This will be called when the user opens a new item (window) is active.
         /// This allows me to see what type of item (window) it is and decide to disable or enable the ceartin commands
@@ -641,7 +624,6 @@ namespace Microsoft.SnippetDesigner
             {
                 if (elementid == (uint)VSConstants.VSSELELEMID.SEID_WindowFrame)
                 {
-
                     if (currentWindow == null)
                     {
                         currentWindow = Dte.ActiveWindow;
@@ -661,7 +643,8 @@ namespace Microsoft.SnippetDesigner
                         || StringConstants.ExportNameJavaScript.Equals(lang, StringComparison.OrdinalIgnoreCase)
                         || StringConstants.ExportNameJavaScript2.Equals(lang, StringComparison.OrdinalIgnoreCase)
                         || StringConstants.ExportNameHTML.Equals(lang, StringComparison.OrdinalIgnoreCase)
-                        ||  StringConstants.ExportNameCPP.Equals(lang, StringComparison.OrdinalIgnoreCase)
+                        || StringConstants.ExportNameCPP.Equals(lang, StringComparison.OrdinalIgnoreCase)
+                        || StringConstants.ExportNameCSS.Equals(lang, StringComparison.OrdinalIgnoreCase)
 
                         )
                     {
@@ -699,7 +682,6 @@ namespace Microsoft.SnippetDesigner
         {
             return VSConstants.S_OK;
         }
-
 
         public void Dispose()
         {
@@ -741,6 +723,6 @@ namespace Microsoft.SnippetDesigner
             return VSConstants.S_OK;
         }
 
-        #endregion
+        #endregion IVsInstalledProduct Members
     }
 }

@@ -11,7 +11,6 @@ namespace Microsoft.SnippetDesigner
         //member variables
         private readonly Dictionary<string, string> exportNameToSchemaName = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
-
         /// <summary>
         /// Gets the code.
         /// </summary>
@@ -35,6 +34,7 @@ namespace Microsoft.SnippetDesigner
             exportNameToSchemaName[StringConstants.ExportNameHTML] = StringConstants.SchemaNameHTML;
             exportNameToSchemaName[StringConstants.ExportNameSQL] = StringConstants.SchemaNameSQL;
             exportNameToSchemaName[StringConstants.ExportNameSQL2] = StringConstants.SchemaNameSQL;
+            exportNameToSchemaName[StringConstants.ExportNameCSS] = StringConstants.SchemaNameCSS;
 
             Code = code;
             if (exportNameToSchemaName.ContainsKey(language))
